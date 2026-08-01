@@ -1,184 +1,302 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1010" font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1440" font-family="'Segoe UI', Helvetica, Arial, sans-serif">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+      <path d="M0,0 L10,5 L0,10 z" fill="#e5e7eb"/>
     </marker>
-    <marker id="arrowDash" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 z" fill="#c2410c"/>
-    </marker>
+
+    <symbol id="i-users" viewBox="0 0 32 32">
+      <circle cx="12" cy="10" r="5" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <path d="M3,26 c0,-8 6,-11 9,-11 s9,3 9,11" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="22" cy="12" r="4" fill="none" stroke="#c7d2fe" stroke-width="2"/>
+      <path d="M16,26 c0.5,-6.5 5,-9 9,-9 s7,3 7,9" fill="none" stroke="#c7d2fe" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="i-globe" viewBox="0 0 32 32">
+      <circle cx="16" cy="16" r="12" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <ellipse cx="16" cy="16" rx="5" ry="12" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+      <line x1="4" y1="16" x2="28" y2="16" stroke="#ffffff" stroke-width="1.6"/>
+      <path d="M6,10 h20 M6,22 h20" fill="none" stroke="#ffffff" stroke-width="1.4"/>
+    </symbol>
+
+    <symbol id="i-igw" viewBox="0 0 32 32">
+      <circle cx="16" cy="16" r="10" fill="none" stroke="#ffffff" stroke-width="2.3"/>
+      <line x1="9" y1="16" x2="23" y2="16" stroke="#ffffff" stroke-width="2.3"/>
+    </symbol>
+
+    <symbol id="i-nat" viewBox="0 0 32 32">
+      <rect x="6" y="10" width="20" height="12" rx="3" fill="none" stroke="#ffffff" stroke-width="2.2"/>
+      <path d="M10,16 h12 m-5,-5 l5,5 l-5,5" fill="none" stroke="#ffffff" stroke-width="2"/>
+    </symbol>
+
+    <symbol id="i-hub" viewBox="0 0 32 32">
+      <circle cx="16" cy="16" r="4" fill="none" stroke="#ffffff" stroke-width="2.2"/>
+      <line x1="16" y1="12" x2="16" y2="5" stroke="#ffffff" stroke-width="2.2"/>
+      <line x1="19" y1="18.5" x2="25" y2="23" stroke="#ffffff" stroke-width="2.2"/>
+      <line x1="13" y1="18.5" x2="7" y2="23" stroke="#ffffff" stroke-width="2.2"/>
+      <circle cx="16" cy="5" r="2" fill="#ffffff"/>
+      <circle cx="25" cy="23" r="2" fill="#ffffff"/>
+      <circle cx="7" cy="23" r="2" fill="#ffffff"/>
+    </symbol>
+
+    <symbol id="i-chip" viewBox="0 0 32 32">
+      <rect x="9" y="9" width="14" height="14" rx="2" fill="none" stroke="#ffffff" stroke-width="2.2"/>
+      <line x1="12" y1="9" x2="12" y2="5" stroke="#ffffff" stroke-width="2"/>
+      <line x1="16" y1="9" x2="16" y2="5" stroke="#ffffff" stroke-width="2"/>
+      <line x1="20" y1="9" x2="20" y2="5" stroke="#ffffff" stroke-width="2"/>
+      <line x1="12" y1="23" x2="12" y2="27" stroke="#ffffff" stroke-width="2"/>
+      <line x1="16" y1="23" x2="16" y2="27" stroke="#ffffff" stroke-width="2"/>
+      <line x1="20" y1="23" x2="20" y2="27" stroke="#ffffff" stroke-width="2"/>
+    </symbol>
+
+    <symbol id="i-db" viewBox="0 0 32 32">
+      <ellipse cx="16" cy="9" rx="10" ry="4" fill="none" stroke="#ffffff" stroke-width="2.2"/>
+      <path d="M6,9 v14 a10,4 0 0 0 20,0 v-14" fill="none" stroke="#ffffff" stroke-width="2.2"/>
+      <path d="M6,16 a10,4 0 0 0 20,0" fill="none" stroke="#ffffff" stroke-width="1.6"/>
+    </symbol>
+
+    <symbol id="i-shield" viewBox="0 0 32 32">
+      <path d="M16,5 l10,4 v9 c0,7.5 -5,11.5 -10,13.5 c-5,-2 -10,-6 -10,-13.5 v-9 z" fill="none" stroke="#ffffff" stroke-width="2.2"/>
+      <path d="M11,16 l4,4 l7,-8" fill="none" stroke="#ffffff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <symbol id="i-list" viewBox="0 0 32 32">
+      <rect x="6" y="8" width="20" height="5" rx="1.5" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+      <rect x="6" y="17" width="20" height="5" rx="1.5" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+    </symbol>
+
+    <symbol id="i-doc" viewBox="0 0 32 32">
+      <path d="M9,5 h10 l6,6 v16 h-16 z" fill="none" stroke="#ffffff" stroke-width="2.1" stroke-linejoin="round"/>
+      <path d="M19,5 v6 h6" fill="none" stroke="#ffffff" stroke-width="2.1" stroke-linejoin="round"/>
+      <line x1="12" y1="18" x2="20" y2="18" stroke="#ffffff" stroke-width="1.7"/>
+      <line x1="12" y1="23" x2="20" y2="23" stroke="#ffffff" stroke-width="1.7"/>
+    </symbol>
+
+    <symbol id="i-image" viewBox="0 0 32 32">
+      <rect x="5" y="7" width="22" height="18" rx="2.5" fill="none" stroke="#ffffff" stroke-width="2.1"/>
+      <circle cx="12" cy="14" r="2.4" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+      <path d="M6,23 l7,-7 l5,5 l4,-4 l6,6" fill="none" stroke="#ffffff" stroke-width="1.9" stroke-linejoin="round" stroke-linecap="round"/>
+    </symbol>
+
+    <symbol id="i-scale" viewBox="0 0 32 32">
+      <rect x="6" y="12" width="7" height="14" rx="1.5" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <rect x="14.5" y="7" width="7" height="19" rx="1.5" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <rect x="23" y="16" width="7" height="10" rx="1.5" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <path d="M6,4 l5,-3 l5,3" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,3)"/>
+    </symbol>
   </defs>
 
-  <rect x="0" y="0" width="900" height="1010" fill="#ffffff"/>
-
-  <!-- Title -->
-  <text x="450" y="40" text-anchor="middle" font-size="25" font-weight="700" fill="#16213e">AWS 3-Tier Architecture — Request Flow</text>
-  <text x="450" y="63" text-anchor="middle" font-size="13" fill="#6b7280">Multi-AZ VPC • Public / Private Subnets • Auto Scaling • Private RDS</text>
+  <!-- background -->
+  <rect x="0" y="0" width="1440" height="1330" fill="#0a0d14"/>
 
   <!-- Users -->
   <g>
-    <rect x="30" y="96" width="130" height="86" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
-    <circle cx="75" cy="126" r="9" fill="#2563eb"/>
-    <path d="M62,146 q13,-14 26,0" stroke="#2563eb" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <circle cx="100" cy="128" r="7" fill="#93c5fd"/>
-    <path d="M90,144 q10,-11 20,0" stroke="#93c5fd" stroke-width="3" fill="none" stroke-linecap="round"/>
-    <text x="95" y="168" text-anchor="middle" font-size="12" font-weight="700" fill="#1e3a8a">Users</text>
+    <use href="#i-users" x="524" y="24" width="52" height="52"/>
+    <text x="550" y="100" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">Users</text>
   </g>
 
-  <line x1="160" y1="139" x2="222" y2="139" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
-  <text x="191" y="128" text-anchor="middle" font-size="10" fill="#6b7280">HTTPS</text>
+  <line x1="590" y1="52" x2="716" y2="52" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Internet -->
+  <g>
+    <use href="#i-globe" x="724" y="24" width="52" height="52"/>
+    <text x="750" y="100" text-anchor="middle" font-size="15" font-weight="600" fill="#ffffff">Internet</text>
+  </g>
+
+  <line x1="750" y1="112" x2="750" y2="146" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- AWS Cloud outer container -->
+  <rect x="40" y="150" width="1360" height="1040" rx="18" fill="#0d1117" stroke="#e5e7eb" stroke-width="1.6" stroke-opacity="0.55"/>
+  <rect x="62" y="168" width="30" height="30" rx="7" fill="#ff9900"/>
+  <text x="77" y="189" text-anchor="middle" font-size="11.5" font-weight="800" fill="#0a0d14">aws</text>
+  <text x="102" y="190" font-size="16" font-weight="700" fill="#ffffff">AWS Cloud</text>
 
   <!-- Internet Gateway -->
   <g>
-    <rect x="228" y="96" width="150" height="86" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
-    <circle cx="303" cy="126" r="13" fill="none" stroke="#059669" stroke-width="3"/>
-    <line x1="290" y1="126" x2="316" y2="126" stroke="#059669" stroke-width="3"/>
-    <text x="303" y="163" text-anchor="middle" font-size="11.5" font-weight="700" fill="#065f46">Internet Gateway</text>
-    <text x="303" y="176" text-anchor="middle" font-size="9.5" fill="#047857">FLM-IGW</text>
+    <rect x="716" y="212" width="68" height="68" rx="14" fill="#6d5bd0"/>
+    <use href="#i-igw" x="726" y="222" width="48" height="48"/>
+    <text x="750" y="304" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Internet Gateway</text>
+    <text x="750" y="320" text-anchor="middle" font-size="10.5" fill="#9ca3af">FLM-IGW</text>
   </g>
 
-  <line x1="303" y1="182" x2="303" y2="212" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="750" y1="326" x2="750" y2="352" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <!-- VPC outer container: y 212 -> 872 (height 660) -->
-  <rect x="30" y="212" width="840" height="660" rx="14" fill="#f8fafc" stroke="#059669" stroke-width="2" stroke-dasharray="6 4"/>
-  <text x="55" y="238" font-size="13.5" font-weight="700" fill="#065f46">VPC · 10.0.0.0/16 — spans 2 Availability Zones (us-east-1a / us-east-1b)</text>
-
-  <!-- Left security column: y 254 -> 852 (height 598) -->
-  <rect x="50" y="254" width="150" height="598" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.2"/>
-  <text x="125" y="276" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">SECURITY &amp;</text>
-  <text x="125" y="290" text-anchor="middle" font-size="11.5" font-weight="700" fill="#166534">NETWORK</text>
-
-  <!-- Security groups icon -->
+  <!-- VPC container -->
+  <rect x="170" y="352" width="900" height="808" rx="16" fill="#22c55e" fill-opacity="0.05" stroke="#22c55e" stroke-width="2.2"/>
   <g>
-    <rect x="70" y="306" width="110" height="100" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>
-    <path d="M125,320 l20,8 v20 c0,15 -9,24 -20,28 c-11,-4 -20,-13 -20,-28 v-20 z" fill="none" stroke="#16a34a" stroke-width="2.2"/>
-    <text x="125" y="392" text-anchor="middle" font-size="10" font-weight="600" fill="#166534">Security Groups</text>
+    <rect x="190" y="368" width="26" height="26" rx="6" fill="none" stroke="#4ade80" stroke-width="2"/>
+    <path d="M196,381 h14 m-9,-5 l0,10 m8,-10 l0,10" stroke="#4ade80" stroke-width="1.6" fill="none"/>
   </g>
+  <text x="226" y="388" font-size="15" font-weight="700" fill="#4ade80">VPC · 10.0.0.0/16 — 2 Availability Zones</text>
 
-  <!-- NAT gateway icon -->
+  <!-- Application Load Balancer -->
   <g>
-    <rect x="70" y="428" width="110" height="100" rx="8" fill="#fff7ed" stroke="#ea580c" stroke-width="1.2"/>
-    <rect x="100" y="450" width="50" height="32" rx="6" fill="none" stroke="#ea580c" stroke-width="2.2"/>
-    <path d="M108,466 h34 m-8,-6 l8,6 l-8,6" fill="none" stroke="#ea580c" stroke-width="2"/>
-    <text x="125" y="514" text-anchor="middle" font-size="10" font-weight="600" fill="#9a3412">NAT Gateway</text>
+    <circle cx="620" cy="446" r="30" fill="#6d5bd0"/>
+    <use href="#i-hub" x="596" y="422" width="48" height="48"/>
+    <text x="620" y="496" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Application Load Balancer</text>
+    <text x="620" y="513" text-anchor="middle" font-size="10.5" fill="#9ca3af">Public Subnets · AZ-1 / AZ-2</text>
   </g>
 
-  <!-- Route tables icon -->
+  <line x1="580" y1="500" x2="440" y2="548" stroke="#9ca3af" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="660" y1="500" x2="850" y2="548" stroke="#9ca3af" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Public Subnet AZ-1 -->
+  <rect x="210" y="550" width="410" height="180" rx="10" fill="#22c55e" fill-opacity="0.04" stroke="#22c55e" stroke-width="1.6" stroke-dasharray="7 5"/>
   <g>
-    <rect x="70" y="550" width="110" height="100" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>
-    <rect x="95" y="570" width="60" height="10" rx="2" fill="#bbf7d0" stroke="#16a34a"/>
-    <rect x="95" y="586" width="60" height="10" rx="2" fill="#bbf7d0" stroke="#16a34a"/>
-    <rect x="95" y="602" width="60" height="10" rx="2" fill="#bbf7d0" stroke="#16a34a"/>
-    <text x="125" y="636" text-anchor="middle" font-size="10" font-weight="600" fill="#166534">Route Tables</text>
+    <rect x="228" y="566" width="18" height="18" rx="3" fill="none" stroke="#4ade80" stroke-width="1.8"/>
+    <path d="M231,571 v-2 a3,3 0 0 1 6,0 v2" fill="none" stroke="#4ade80" stroke-width="1.6"/>
   </g>
-
-  <!-- Subnets icon -->
+  <text x="254" y="580" font-size="13" font-weight="700" fill="#4ade80">Public Subnet · AZ-1</text>
   <g>
-    <rect x="70" y="672" width="110" height="100" rx="8" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>
-    <rect x="90" y="690" width="35" height="24" rx="4" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.4"/>
-    <rect x="132" y="690" width="35" height="24" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.4"/>
-    <text x="125" y="742" text-anchor="middle" font-size="9.5" font-weight="600" fill="#166534">Public / Private</text>
-    <text x="125" y="754" text-anchor="middle" font-size="9.5" font-weight="600" fill="#166534">Subnets</text>
+    <rect x="386" y="612" width="60" height="60" rx="13" fill="#6d5bd0"/>
+    <use href="#i-nat" x="394" y="620" width="44" height="44"/>
+    <text x="416" y="696" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">NAT Gateway</text>
+    <text x="416" y="712" text-anchor="middle" font-size="10" fill="#9ca3af">FLM-NAT</text>
   </g>
 
-  <!-- internal connectors within the security column -->
-  <line x1="125" y1="406" x2="125" y2="428" stroke="#16a34a" stroke-width="1.6" marker-end="url(#arrow)"/>
-  <line x1="125" y1="528" x2="125" y2="550" stroke="#16a34a" stroke-width="1.6" marker-end="url(#arrow)"/>
-  <line x1="125" y1="650" x2="125" y2="672" stroke="#16a34a" stroke-width="1.6" marker-end="url(#arrow)"/>
-
-  <!-- security column governs the traffic + compute layers -->
-  <line x1="202" y1="560" x2="220" y2="560" stroke="#16a34a" stroke-width="2.4" marker-end="url(#arrow)"/>
-
-  <!-- Traffic distribution layer: y 254 -> 394 -->
-  <rect x="222" y="254" width="628" height="140" rx="10" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.4"/>
-  <text x="536" y="276" text-anchor="middle" font-size="11.5" font-weight="700" fill="#5b21b6">TRAFFIC DISTRIBUTION LAYER — PUBLIC SUBNETS (AZ-1 / AZ-2)</text>
+  <!-- Public Subnet AZ-2 -->
+  <rect x="640" y="550" width="410" height="180" rx="10" fill="#22c55e" fill-opacity="0.04" stroke="#22c55e" stroke-width="1.6" stroke-dasharray="7 5"/>
   <g>
-    <rect x="436" y="292" width="200" height="82" rx="10" fill="#ffffff" stroke="#7c3aed" stroke-width="1.6"/>
-    <circle cx="470" cy="333" r="14" fill="none" stroke="#7c3aed" stroke-width="2.2"/>
-    <line x1="470" y1="333" x2="470" y2="319" stroke="#7c3aed" stroke-width="2"/>
-    <line x1="470" y1="333" x2="481" y2="340" stroke="#7c3aed" stroke-width="2"/>
-    <line x1="470" y1="333" x2="459" y2="340" stroke="#7c3aed" stroke-width="2"/>
-    <text x="545" y="329" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4c1d95">Application</text>
-    <text x="545" y="344" text-anchor="middle" font-size="11.5" font-weight="700" fill="#4c1d95">Load Balancer</text>
-    <text x="545" y="360" text-anchor="middle" font-size="9.5" fill="#6d28d9">Distributes incoming traffic</text>
+    <rect x="658" y="566" width="18" height="18" rx="3" fill="none" stroke="#4ade80" stroke-width="1.8"/>
+    <path d="M661,571 v-2 a3,3 0 0 1 6,0 v2" fill="none" stroke="#4ade80" stroke-width="1.6"/>
   </g>
-
-  <line x1="536" y1="394" x2="536" y2="424" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
-
-  <!-- Compute layer: y 424 -> 684 -->
-  <rect x="222" y="424" width="628" height="260" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="1.4" stroke-dasharray="5 4"/>
-  <text x="536" y="446" text-anchor="middle" font-size="11.5" font-weight="700" fill="#9a3412">COMPUTE LAYER — AUTO SCALING GROUP (PRIVATE SUBNETS)</text>
-
+  <text x="684" y="580" font-size="13" font-weight="700" fill="#4ade80">Public Subnet · AZ-2</text>
   <g>
-    <rect x="440" y="458" width="192" height="34" rx="8" fill="#ffedd5" stroke="#ea580c" stroke-width="1.2"/>
-    <text x="536" y="480" text-anchor="middle" font-size="11" font-weight="700" fill="#9a3412">Auto Scaling Group · desired 2, max 5</text>
+    <rect x="815" y="612" width="60" height="60" rx="13" fill="#6d5bd0"/>
+    <use href="#i-hub" x="823" y="620" width="44" height="44"/>
+    <text x="845" y="696" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">Target Group</text>
+    <text x="845" y="712" text-anchor="middle" font-size="10" fill="#9ca3af">flm-tg</text>
   </g>
 
-  <line x1="480" y1="492" x2="480" y2="512" stroke="#c2410c" stroke-width="1.6" stroke-dasharray="4 3"/>
-  <line x1="592" y1="492" x2="592" y2="512" stroke="#c2410c" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <!-- arrows down to compute layer -->
+  <line x1="416" y1="730" x2="416" y2="758" stroke="#9ca3af" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="845" y1="730" x2="845" y2="758" stroke="#9ca3af" stroke-width="1.8" marker-end="url(#arrow)"/>
 
-  <!-- EC2 AZ-1 -->
+  <!-- Private Subnet AZ-1 (compute) -->
+  <rect x="210" y="760" width="410" height="180" rx="10" fill="#3b82f6" fill-opacity="0.05" stroke="#3b82f6" stroke-width="1.6" stroke-dasharray="7 5"/>
   <g>
-    <rect x="330" y="512" width="180" height="130" rx="10" fill="#ffffff" stroke="#ea580c" stroke-width="1.6"/>
-    <rect x="380" y="532" width="80" height="60" rx="6" fill="none" stroke="#ea580c" stroke-width="2.2"/>
-    <line x1="392" y1="532" x2="392" y2="522" stroke="#ea580c" stroke-width="2"/>
-    <line x1="420" y1="532" x2="420" y2="522" stroke="#ea580c" stroke-width="2"/>
-    <line x1="448" y1="532" x2="448" y2="522" stroke="#ea580c" stroke-width="2"/>
-    <line x1="392" y1="592" x2="392" y2="602" stroke="#ea580c" stroke-width="2"/>
-    <line x1="420" y1="592" x2="420" y2="602" stroke="#ea580c" stroke-width="2"/>
-    <line x1="448" y1="592" x2="448" y2="602" stroke="#ea580c" stroke-width="2"/>
-    <text x="420" y="622" text-anchor="middle" font-size="11" font-weight="700" fill="#9a3412">EC2 · AZ-1</text>
-    <text x="420" y="635" text-anchor="middle" font-size="9" fill="#c2410c">Private1-Flm · Apache/PHP</text>
+    <rect x="228" y="776" width="18" height="18" rx="3" fill="none" stroke="#60a5fa" stroke-width="1.8"/>
+    <path d="M231,781 v-2 a3,3 0 0 1 6,0 v2" fill="none" stroke="#60a5fa" stroke-width="1.6"/>
   </g>
-
-  <!-- EC2 AZ-2 -->
+  <text x="254" y="790" font-size="13" font-weight="700" fill="#60a5fa">Private Subnet · AZ-1</text>
   <g>
-    <rect x="562" y="512" width="180" height="130" rx="10" fill="#ffffff" stroke="#ea580c" stroke-width="1.6"/>
-    <rect x="612" y="532" width="80" height="60" rx="6" fill="none" stroke="#ea580c" stroke-width="2.2"/>
-    <line x1="624" y1="532" x2="624" y2="522" stroke="#ea580c" stroke-width="2"/>
-    <line x1="652" y1="532" x2="652" y2="522" stroke="#ea580c" stroke-width="2"/>
-    <line x1="680" y1="532" x2="680" y2="522" stroke="#ea580c" stroke-width="2"/>
-    <line x1="624" y1="592" x2="624" y2="602" stroke="#ea580c" stroke-width="2"/>
-    <line x1="652" y1="592" x2="652" y2="602" stroke="#ea580c" stroke-width="2"/>
-    <line x1="680" y1="592" x2="680" y2="602" stroke="#ea580c" stroke-width="2"/>
-    <text x="652" y="622" text-anchor="middle" font-size="11" font-weight="700" fill="#9a3412">EC2 · AZ-2</text>
-    <text x="652" y="635" text-anchor="middle" font-size="9" fill="#c2410c">Private2-Flm · Apache/PHP</text>
+    <rect x="386" y="822" width="60" height="60" rx="13" fill="#f7941d"/>
+    <use href="#i-chip" x="394" y="830" width="44" height="44"/>
+    <text x="416" y="906" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">EC2 · Auto Scaling</text>
+    <text x="416" y="922" text-anchor="middle" font-size="10" fill="#9ca3af">Private1-Flm · Apache/PHP</text>
   </g>
 
-  <line x1="420" y1="642" x2="480" y2="664" stroke="#374151" stroke-width="1.6"/>
-  <line x1="652" y1="642" x2="592" y2="664" stroke="#374151" stroke-width="1.6"/>
-  <line x1="480" y1="664" x2="536" y2="684" stroke="#374151" stroke-width="1.6"/>
-  <line x1="592" y1="664" x2="536" y2="684" stroke="#374151" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <!-- Private Subnet AZ-2 (compute) -->
+  <rect x="640" y="760" width="410" height="180" rx="10" fill="#3b82f6" fill-opacity="0.05" stroke="#3b82f6" stroke-width="1.6" stroke-dasharray="7 5"/>
+  <g>
+    <rect x="658" y="776" width="18" height="18" rx="3" fill="none" stroke="#60a5fa" stroke-width="1.8"/>
+    <path d="M661,781 v-2 a3,3 0 0 1 6,0 v2" fill="none" stroke="#60a5fa" stroke-width="1.6"/>
+  </g>
+  <text x="684" y="790" font-size="13" font-weight="700" fill="#60a5fa">Private Subnet · AZ-2</text>
+  <g>
+    <rect x="815" y="822" width="60" height="60" rx="13" fill="#f7941d"/>
+    <use href="#i-chip" x="823" y="830" width="44" height="44"/>
+    <text x="845" y="906" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">EC2 · Auto Scaling</text>
+    <text x="845" y="922" text-anchor="middle" font-size="10" fill="#9ca3af">Private2-Flm · Apache/PHP</text>
+  </g>
 
-  <!-- Data layer: y 704 -> 834 -->
-  <rect x="222" y="704" width="628" height="130" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.4"/>
-  <text x="536" y="726" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1e3a8a">DATA LAYER — PRIVATE SUBNET</text>
+  <!-- converge to data layer -->
+  <line x1="416" y1="940" x2="600" y2="982" stroke="#9ca3af" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="845" y1="940" x2="660" y2="982" stroke="#9ca3af" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- Data layer -->
+  <rect x="210" y="980" width="840" height="160" rx="10" fill="#3b82f6" fill-opacity="0.05" stroke="#3b82f6" stroke-width="1.6" stroke-dasharray="7 5"/>
+  <text x="230" y="1006" font-size="13" font-weight="700" fill="#60a5fa">Private Subnet — Data Layer</text>
+  <g>
+    <rect x="598" y="1018" width="64" height="64" rx="14" fill="#3b6fd4"/>
+    <use href="#i-db" x="606" y="1026" width="48" height="48"/>
+    <text x="630" y="1104" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">Amazon RDS</text>
+    <text x="630" y="1120" text-anchor="middle" font-size="10.5" fill="#9ca3af">MySQL · flm-db · db.t3.micro</text>
+  </g>
+
+  <!-- Right supporting-services panel -->
+  <rect x="1100" y="352" width="260" height="808" rx="14" fill="#ffffff" fill-opacity="0.03" stroke="#e5e7eb" stroke-width="1.2" stroke-dasharray="5 4" stroke-opacity="0.4"/>
+  <text x="1122" y="386" font-size="13" font-weight="700" fill="#e5e7eb" letter-spacing="0.5">SUPPORTING RESOURCES</text>
 
   <g>
-    <rect x="436" y="740" width="200" height="80" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.6"/>
-    <ellipse cx="486" cy="762" rx="24" ry="9" fill="none" stroke="#2563eb" stroke-width="2.2"/>
-    <path d="M462,762 v22 a24,9 0 0 0 48,0 v-22" fill="none" stroke="#2563eb" stroke-width="2.2"/>
-    <text x="562" y="774" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1e3a8a">Amazon RDS</text>
-    <text x="562" y="789" text-anchor="middle" font-size="9.5" fill="#1d4ed8">MySQL · flm-db</text>
-    <text x="562" y="802" text-anchor="middle" font-size="9" fill="#3b82f6">db.t3.micro</text>
+    <rect x="1122" y="414" width="46" height="46" rx="10" fill="#ef4444"/>
+    <use href="#i-shield" x="1129" y="421" width="32" height="32"/>
+    <text x="1180" y="434" font-size="13" font-weight="700" fill="#ffffff">Security Groups</text>
+    <text x="1180" y="450" font-size="10" fill="#9ca3af">RDS · SG-Flm-App</text>
   </g>
 
-  <!-- Legend (outside VPC box) -->
-  <g font-size="10.5" fill="#374151">
-    <rect x="60" y="906" width="14" height="14" rx="3" fill="#a7f3d0" stroke="#059669"/>
-    <text x="80" y="917">Networking</text>
-
-    <rect x="200" y="906" width="14" height="14" rx="3" fill="#ddd6fe" stroke="#7c3aed"/>
-    <text x="220" y="917">Traffic Distribution</text>
-
-    <rect x="380" y="906" width="14" height="14" rx="3" fill="#fed7aa" stroke="#ea580c"/>
-    <text x="400" y="917">Compute (Auto Scaling)</text>
-
-    <rect x="590" y="906" width="14" height="14" rx="3" fill="#bfdbfe" stroke="#2563eb"/>
-    <text x="610" y="917">Database</text>
-
-    <rect x="710" y="906" width="14" height="14" rx="3" fill="#bbf7d0" stroke="#16a34a"/>
-    <text x="730" y="917">Security &amp; Routing</text>
+  <g>
+    <rect x="1122" y="494" width="46" height="46" rx="10" fill="#22c55e"/>
+    <use href="#i-list" x="1129" y="501" width="32" height="32"/>
+    <text x="1180" y="514" font-size="13" font-weight="700" fill="#ffffff">Route Tables</text>
+    <text x="1180" y="530" font-size="10" fill="#9ca3af">Public / Private</text>
   </g>
 
-  <text x="450" y="960" text-anchor="middle" font-size="11.5" fill="#6b7280">Users -&gt; Internet Gateway -&gt; VPC -&gt; Public Subnet (ALB) -&gt; Private Subnet (Auto Scaling Group) -&gt; RDS</text>
+  <g>
+    <rect x="1122" y="574" width="46" height="46" rx="10" fill="#f7941d"/>
+    <use href="#i-doc" x="1129" y="581" width="32" height="32"/>
+    <text x="1180" y="594" font-size="13" font-weight="700" fill="#ffffff">Launch Template</text>
+    <text x="1180" y="610" font-size="10" fill="#9ca3af">MyFLM</text>
+  </g>
+
+  <g>
+    <rect x="1122" y="654" width="46" height="46" rx="10" fill="#f7941d"/>
+    <use href="#i-image" x="1129" y="661" width="32" height="32"/>
+    <text x="1180" y="674" font-size="13" font-weight="700" fill="#ffffff">AMI</text>
+    <text x="1180" y="690" font-size="10" fill="#9ca3af">Golden image</text>
+  </g>
+
+  <g>
+    <rect x="1122" y="734" width="46" height="46" rx="10" fill="#f7941d"/>
+    <use href="#i-scale" x="1129" y="741" width="32" height="32"/>
+    <text x="1180" y="754" font-size="13" font-weight="700" fill="#ffffff">Auto Scaling Group</text>
+    <text x="1180" y="770" font-size="10" fill="#9ca3af">Desired 2 · Max 5</text>
+  </g>
+
+  <!-- Build & Deployment flow strip -->
+  <rect x="40" y="1210" width="1360" height="150" rx="16" fill="#0d1117" stroke="#e5e7eb" stroke-width="1.2" stroke-dasharray="6 4" stroke-opacity="0.5"/>
+  <text x="64" y="1238" font-size="12.5" font-weight="700" fill="#9ca3af" letter-spacing="0.8">BUILD &amp; DEPLOYMENT FLOW</text>
+
+  <g>
+    <rect x="90" y="1256" width="52" height="52" rx="12" fill="#f7941d"/>
+    <use href="#i-chip" x="99" y="1265" width="34" height="34"/>
+    <text x="116" y="1328" text-anchor="middle" font-size="11.5" font-weight="600" fill="#ffffff">Build &amp; Test EC2</text>
+  </g>
+  <line x1="150" y1="1282" x2="290" y2="1282" stroke="#9ca3af" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="298" y="1256" width="52" height="52" rx="12" fill="#f7941d"/>
+    <use href="#i-image" x="307" y="1265" width="34" height="34"/>
+    <text x="324" y="1328" text-anchor="middle" font-size="11.5" font-weight="600" fill="#ffffff">Create AMI</text>
+  </g>
+  <line x1="358" y1="1282" x2="498" y2="1282" stroke="#9ca3af" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="506" y="1256" width="52" height="52" rx="12" fill="#f7941d"/>
+    <use href="#i-doc" x="515" y="1265" width="34" height="34"/>
+    <text x="532" y="1328" text-anchor="middle" font-size="11.5" font-weight="600" fill="#ffffff">Launch Template</text>
+  </g>
+  <line x1="566" y1="1282" x2="706" y2="1282" stroke="#9ca3af" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="714" y="1256" width="52" height="52" rx="12" fill="#f7941d"/>
+    <use href="#i-scale" x="723" y="1265" width="34" height="34"/>
+    <text x="740" y="1328" text-anchor="middle" font-size="11.5" font-weight="600" fill="#ffffff">Auto Scaling Group</text>
+  </g>
+  <line x1="774" y1="1282" x2="914" y2="1282" stroke="#9ca3af" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="922" y="1256" width="52" height="52" rx="12" fill="#6d5bd0"/>
+    <use href="#i-hub" x="931" y="1265" width="34" height="34"/>
+    <text x="948" y="1328" text-anchor="middle" font-size="11.5" font-weight="600" fill="#ffffff">Attach to ALB</text>
+  </g>
+  <line x1="982" y1="1282" x2="1122" y2="1282" stroke="#9ca3af" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <g>
+    <rect x="1130" y="1256" width="52" height="52" rx="12" fill="#3b6fd4"/>
+    <use href="#i-db" x="1139" y="1265" width="34" height="34"/>
+    <text x="1156" y="1328" text-anchor="middle" font-size="11.5" font-weight="600" fill="#ffffff">RDS Connected</text>
+  </g>
+
+  <!-- caption -->
+  <text x="720" y="1398" text-anchor="middle" font-size="12.5" fill="#6b7280">Users -&gt; Internet Gateway -&gt; VPC -&gt; Public Subnet (ALB / NAT) -&gt; Private Subnet (Auto Scaling EC2) -&gt; RDS</text>
 </svg>
