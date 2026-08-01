@@ -49,46 +49,9 @@ The app itself is a donor-management portal — users sign up, register as blood
 
 ## Architecture
 
-```
-                                   Internet
-                                       │
-                                       ▼
-                            ┌─────────────────────┐
-                            │  Internet Gateway    │
-                            │      (FLM-IGW)       │
-                            └──────────┬───────────┘
-                                       │
-   ┌───────────────────────────────── VPC (10.0.0.0/16) ─────────────────────────────────┐
-   │                                   │                                                  │
-   │   ┌────────────── AZ: us-east-1a ─┴─┐        ┌────────────── AZ: us-east-1b ───────┐ │
-   │   │                                 │        │                                     │ │
-   │   │  Public Subnet (Public1-Flm)    │        │  Public Subnet (Public2-Flm)        │ │
-   │   │        │                        │        │        │                            │ │
-   │   │        ▼                        │        │        ▼                            │ │
-   │   │  ┌───────────────────────────── Application Load Balancer ──────────────────┐   │ │
-   │   │  └───────────────────────────────────┬──────────────────────────────────────┘   │ │
-   │   │                                       │ (Target Group → private subnets)         │ │
-   │   │  Private Subnet (Private1-Flm)        │        Private Subnet (Private2-Flm)     │ │
-   │   │        │                              │              │                          │ │
-   │   │        ▼                              ▼              ▼                          │ │
-   │   │  ┌─────────────┐              ┌─────────────┐  ┌─────────────┐                  │ │
-   │   │  │ EC2 (ASG)   │◄────────────►│ EC2 (ASG)   │  │   (scale    │                  │ │
-   │   │  │ Apache/PHP  │              │ Apache/PHP  │  │   2 → 5)    │                  │ │
-   │   │  └──────┬──────┘              └──────┬──────┘  └─────────────┘                  │ │
-   │   │         │                            │                                          │ │
-   │   │         └──────────────┬─────────────┘                                          │ │
-   │   │                        ▼                                                        │ │
-   │   │              ┌───────────────────┐                                              │ │
-   │   │              │  RDS for MySQL    │   (flm-db, db.t3.micro)                      │ │
-   │   │              │  Private Subnet   │                                              │ │
-   │   │              └───────────────────┘                                              │ │
-   │   │                                                                                  │ │
-   │   │  NAT Gateway (FLM-NAT) in Public1-Flm ─── private route table → outbound only    │ │
-   │   └──────────────────────────────────────────────────────────────────────────────────┘ │
-   └──────────────────────────────────────────────────────────────────────────────────────┘
-```
+![AWS 3-Tier Architecture Diagram](docs/images/architecture/architecture-diagram.svg)
 
-**Request flow:** user hits the domain → **Internet Gateway** → **VPC** → **public subnet** → **Application Load Balancer** → routed to **private subnet** → **EC2 instance (Auto Scaling Group)** → **RDS**, reachable over the private VPC network since app and database sit in the same VPC.
+**Request flow:** user hits the domain → **Internet Gateway** → **VPC** → **public subnet** → **Application Load Balancer** → routed to **private subnet** → **EC2 instance (Auto Scaling Group)** → **RDS**, reachable over the private VPC network since app and database sit in the same VPC. Outbound internet access for the private instances (updates, package installs) goes out through the **NAT Gateway** in the public subnet.
 
 ---
 
