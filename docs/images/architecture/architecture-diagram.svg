@@ -147,10 +147,15 @@
   </g>
   <text x="254" y="580" font-size="13" font-weight="700" fill="#4ade80">Public Subnet · AZ-1</text>
   <g>
-    <rect x="386" y="612" width="60" height="60" rx="13" fill="#6d5bd0"/>
-    <use href="#i-nat" x="394" y="620" width="44" height="44"/>
-    <text x="416" y="696" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">NAT Gateway</text>
-    <text x="416" y="712" text-anchor="middle" font-size="10" fill="#9ca3af">FLM-NAT</text>
+    <rect x="272" y="612" width="60" height="60" rx="13" fill="#6d5bd0"/>
+    <use href="#i-hub" x="280" y="620" width="44" height="44"/>
+    <text x="302" y="696" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">ALB Node</text>
+  </g>
+  <g>
+    <rect x="466" y="612" width="60" height="60" rx="13" fill="#6d5bd0"/>
+    <use href="#i-nat" x="474" y="620" width="44" height="44"/>
+    <text x="496" y="696" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">NAT Gateway</text>
+    <text x="496" y="712" text-anchor="middle" font-size="10" fill="#9ca3af">FLM-NAT</text>
   </g>
 
   <!-- Public Subnet AZ-2 -->
@@ -163,8 +168,7 @@
   <g>
     <rect x="815" y="612" width="60" height="60" rx="13" fill="#6d5bd0"/>
     <use href="#i-hub" x="823" y="620" width="44" height="44"/>
-    <text x="845" y="696" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">Target Group</text>
-    <text x="845" y="712" text-anchor="middle" font-size="10" fill="#9ca3af">flm-tg</text>
+    <text x="845" y="696" text-anchor="middle" font-size="12.5" font-weight="700" fill="#ffffff">ALB Node</text>
   </g>
 
   <!-- arrows down to compute layer -->
@@ -250,6 +254,13 @@
     <use href="#i-scale" x="1129" y="741" width="32" height="32"/>
     <text x="1180" y="754" font-size="13" font-weight="700" fill="#ffffff">Auto Scaling Group</text>
     <text x="1180" y="770" font-size="10" fill="#9ca3af">Desired 2 · Max 5</text>
+  </g>
+
+  <g>
+    <rect x="1122" y="814" width="46" height="46" rx="10" fill="#6d5bd0"/>
+    <use href="#i-hub" x="1129" y="821" width="32" height="32"/>
+    <text x="1180" y="834" font-size="13" font-weight="700" fill="#ffffff">Target Group</text>
+    <text x="1180" y="850" font-size="10" fill="#9ca3af">flm-tg · private subnets</text>
   </g>
 
   <!-- Build & Deployment flow strip -->
