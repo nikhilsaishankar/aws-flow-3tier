@@ -237,6 +237,14 @@ SHOW COLUMNS FROM donors;
 
 > Whenever the database or table name changes, update it everywhere the PHP code references it — `config.php`, `index.php`, `indexadmin.php`, `signup.php`, `find-donor.php`, `search.php`.
 
+**Live verification against RDS** — creating the `admin` table, granting privileges, and confirming the seeded rows come back from `customers.users`:
+
+![Database table verification](docs/images/outcome/outcome-2.png)
+
+Same check run from the app EC2 instance over SSH, confirming the instance can reach the RDS endpoint end-to-end:
+
+![Database table verification via EC2 SSH session](docs/images/outcome/outcome-6.png)
+
 ---
 
 ## Demo Recording
