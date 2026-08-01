@@ -83,6 +83,13 @@
       <rect x="23" y="16" width="7" height="10" rx="1.5" fill="none" stroke="#ffffff" stroke-width="2.1"/>
     </symbol>
 
+    <symbol id="i-expand" viewBox="0 0 32 32">
+      <path d="M4,12 V4 H12" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M28,12 V4 H20" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M4,20 V28 H12" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M28,20 V28 H20" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
     <symbol id="i-lock" viewBox="0 0 24 24">
       <rect x="5" y="10.5" width="14" height="10.5" rx="2.2" fill="none" stroke="currentColor" stroke-width="2.1"/>
       <path d="M7.5,10.5 v-2.8 a4.5,4.5 0 0 1 9,0 v2.8" fill="none" stroke="currentColor" stroke-width="2.1"/>
@@ -112,7 +119,7 @@
     <circle cx="620" cy="30" r="12" fill="#4c3aa8"/>
     <text x="620" y="35" text-anchor="middle" font-size="13" font-weight="800" fill="#ffffff">2</text>
     <text x="650" y="112" text-anchor="middle" font-size="14.5" font-weight="700" fill="#111827">Internet Gateway</text>
-    <text x="650" y="128" text-anchor="middle" font-size="10.5" fill="#6b7280">FLM-IGW</text>
+    <text x="650" y="128" text-anchor="middle" font-size="10.5" fill="#6b7280">igw-main</text>
   </g>
 
   <line x1="650" y1="140" x2="650" y2="196" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
@@ -125,7 +132,7 @@
     <rect x="80" y="252" width="48" height="48" rx="11" fill="#ef4444"/>
     <use href="#i-shield" x="88" y="260" width="32" height="32"/>
     <text x="142" y="270" font-size="13" font-weight="700" fill="#111827">Security Groups</text>
-    <text x="142" y="286" font-size="10.5" fill="#6b7280">RDS · SG-Flm-App</text>
+    <text x="142" y="286" font-size="10.5" fill="#6b7280">App &amp; RDS access</text>
   </g>
   <line x1="104" y1="300" x2="104" y2="322" stroke="#16a34a" stroke-width="1.6" marker-end="url(#arrow)"/>
 
@@ -133,7 +140,7 @@
     <rect x="80" y="326" width="48" height="48" rx="11" fill="#6d5bd0"/>
     <use href="#i-nat" x="88" y="334" width="32" height="32"/>
     <text x="142" y="344" font-size="13" font-weight="700" fill="#111827">NAT Gateway</text>
-    <text x="142" y="360" font-size="10.5" fill="#6b7280">FLM-NAT</text>
+    <text x="142" y="360" font-size="10.5" fill="#6b7280">nat-main</text>
   </g>
   <line x1="104" y1="374" x2="104" y2="396" stroke="#16a34a" stroke-width="1.6" marker-end="url(#arrow)"/>
 
@@ -169,58 +176,51 @@
   <line x1="650" y1="340" x2="650" y2="356" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
 
   <!-- Compute Layer (Auto Scaling) -->
-  <rect x="320" y="360" width="660" height="400" rx="14" fill="#fff7ed" stroke="#ea580c" stroke-width="1.8" stroke-dasharray="8 5"/>
-  <text x="650" y="388" text-anchor="middle" font-size="12.5" font-weight="800" fill="#c2410c" letter-spacing="0.4">COMPUTE LAYER — AUTO SCALING (PRIVATE SUBNETS)</text>
+  <rect x="320" y="360" width="660" height="400" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <text x="650" y="388" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1e3a8a" letter-spacing="0.4">COMPUTE LAYER (AUTO SCALING)</text>
 
-  <!-- AZ-1 -->
   <!-- Auto Scaling Group pill -->
   <g>
-    <rect x="540" y="404" width="220" height="34" rx="17" fill="#fed7aa" stroke="#ea580c" stroke-width="1.2"/>
-    <use href="#i-scale" x="552" y="410" width="22" height="22"/>
-    <text x="590" y="426" font-size="12" font-weight="700" fill="#9a3412">Auto Scaling Group · 2-5</text>
+    <rect x="530" y="406" width="240" height="42" rx="21" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.3"/>
+    <circle cx="562" cy="427" r="17" fill="#f7941d"/>
+    <use href="#i-expand" x="550" y="415" width="24" height="24"/>
+    <text x="588" y="422" font-size="12" font-weight="700" fill="#111827">Auto Scaling Group</text>
+    <text x="588" y="436" font-size="9.5" fill="#6b7280">Automatically adjusts capacity</text>
   </g>
 
-  <!-- column dividers -->
-  <line x1="540" y1="456" x2="540" y2="716" stroke="#fdba74" stroke-width="1.4" stroke-dasharray="4 4"/>
-  <line x1="760" y1="456" x2="760" y2="716" stroke="#fdba74" stroke-width="1.4" stroke-dasharray="4 4"/>
+  <!-- dashed fan connectors: pill -> each EC2 instance -->
+  <line x1="650" y1="448" x2="650" y2="468" stroke="#93c5fd" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <line x1="430" y1="468" x2="870" y2="468" stroke="#93c5fd" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <line x1="430" y1="468" x2="430" y2="498" stroke="#93c5fd" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <line x1="650" y1="468" x2="650" y2="498" stroke="#93c5fd" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <line x1="870" y1="468" x2="870" y2="498" stroke="#93c5fd" stroke-width="1.6" stroke-dasharray="4 3"/>
 
-  <!-- AZ-1 -->
-  <g color="#2563eb">
-    <use href="#i-lock" x="336" y="458" width="16" height="16"/>
-  </g>
-  <text x="358" y="471" font-size="10.5" font-weight="700" fill="#1d4ed8">Private Subnet AZ-1</text>
+  <!-- EC2 Instance (AZ-1) -->
   <g>
     <rect x="402" y="500" width="56" height="56" rx="13" fill="#f7941d"/>
     <use href="#i-chip" x="408" y="506" width="44" height="44"/>
   </g>
   <text x="430" y="580" text-anchor="middle" font-size="12.5" font-weight="700" fill="#111827">EC2 Instance</text>
-  <text x="430" y="596" text-anchor="middle" font-size="10" fill="#6b7280">Private1-Flm</text>
+  <text x="430" y="596" text-anchor="middle" font-size="10" fill="#6b7280">(AZ-1)</text>
 
-  <!-- AZ-2 -->
-  <g color="#2563eb">
-    <use href="#i-lock" x="556" y="458" width="16" height="16"/>
-  </g>
-  <text x="578" y="471" font-size="10.5" font-weight="700" fill="#1d4ed8">Private Subnet AZ-2</text>
+  <!-- EC2 Instance (AZ-2) -->
   <g>
     <rect x="622" y="500" width="56" height="56" rx="13" fill="#f7941d"/>
     <use href="#i-chip" x="628" y="506" width="44" height="44"/>
   </g>
   <text x="650" y="580" text-anchor="middle" font-size="12.5" font-weight="700" fill="#111827">EC2 Instance</text>
-  <text x="650" y="596" text-anchor="middle" font-size="10" fill="#6b7280">Private2-Flm</text>
+  <text x="650" y="596" text-anchor="middle" font-size="10" fill="#6b7280">(AZ-2)</text>
 
-  <!-- AZ-3 -->
-  <g color="#2563eb">
-    <use href="#i-lock" x="776" y="458" width="16" height="16"/>
-  </g>
-  <text x="798" y="471" font-size="10.5" font-weight="700" fill="#1d4ed8">Private Subnet AZ-3</text>
+  <!-- EC2 Instance (AZ-3) -->
   <g>
     <rect x="842" y="500" width="56" height="56" rx="13" fill="#f7941d"/>
     <use href="#i-chip" x="848" y="506" width="44" height="44"/>
   </g>
   <text x="870" y="580" text-anchor="middle" font-size="12.5" font-weight="700" fill="#111827">EC2 Instance</text>
-  <text x="870" y="596" text-anchor="middle" font-size="10" fill="#6b7280">Private3-Flm</text>
+  <text x="870" y="596" text-anchor="middle" font-size="10" fill="#6b7280">(AZ-3)</text>
 
-  <text x="650" y="700" text-anchor="middle" font-size="11.5" font-weight="600" fill="#9a3412">Multi-AZ Deployment for High Availability</text>
+  <line x1="340" y1="670" x2="960" y2="670" stroke="#dbeafe" stroke-width="1.4"/>
+  <text x="650" y="700" text-anchor="middle" font-size="11.5" font-weight="600" fill="#334155">Multi-AZ Deployment for High Availability</text>
 
   <line x1="650" y1="760" x2="650" y2="776" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
 
@@ -231,7 +231,7 @@
     <rect x="618" y="820" width="64" height="64" rx="14" fill="#3b6fd4"/>
     <use href="#i-db" x="626" y="828" width="48" height="48"/>
     <text x="650" y="908" text-anchor="middle" font-size="14.5" font-weight="700" fill="#111827">Amazon RDS</text>
-    <text x="650" y="924" text-anchor="middle" font-size="10.5" fill="#6b7280">MySQL · flm-db · db.t3.micro</text>
+    <text x="650" y="924" text-anchor="middle" font-size="10.5" fill="#6b7280">MySQL · db.t3.micro</text>
   </g>
 
   <!-- ============ RIGHT COLUMN : SUPPORTING RESOURCES ============ -->
@@ -242,7 +242,7 @@
     <rect x="1020" y="252" width="48" height="48" rx="11" fill="#f7941d"/>
     <use href="#i-doc" x="1028" y="260" width="32" height="32"/>
     <text x="1082" y="272" font-size="13" font-weight="700" fill="#111827">Launch Template</text>
-    <text x="1082" y="288" font-size="10.5" fill="#6b7280">MyFLM</text>
+    <text x="1082" y="288" font-size="10.5" fill="#6b7280">web-app-v1</text>
   </g>
 
   <g>
@@ -263,7 +263,7 @@
     <rect x="1020" y="474" width="48" height="48" rx="11" fill="#7c3aed"/>
     <use href="#i-hub" x="1028" y="482" width="32" height="32"/>
     <text x="1082" y="494" font-size="13" font-weight="700" fill="#111827">Target Group</text>
-    <text x="1082" y="510" font-size="10.5" fill="#6b7280">flm-tg · private subnets</text>
+    <text x="1082" y="510" font-size="10.5" fill="#6b7280">private subnets</text>
   </g>
 
   <!-- ============ BUILD & DEPLOYMENT FLOW ============ -->
