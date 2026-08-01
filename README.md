@@ -241,10 +241,6 @@ SHOW COLUMNS FROM donors;
 
 ![Database table verification](docs/images/outcome/outcome-2.png)
 
-Same check run from the app EC2 instance over SSH, confirming the instance can reach the RDS endpoint end-to-end:
-
-![Database table verification via EC2 SSH session](docs/images/outcome/outcome-6.png)
-
 ---
 
 ## Demo Recording
